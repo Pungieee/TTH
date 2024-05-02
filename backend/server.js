@@ -23,6 +23,10 @@ const saleRouter = require('./routes/sale');
 const newRouter = require('./routes/new');
 const searchRouter = require('./routes/search');
 const eduRouter = require('./routes/education');
+const cartRouter = require('./routes/cart');
+const favRouter = require('./routes/fav');
+
+
 
 
 
@@ -62,6 +66,10 @@ app.use('/api/sale', saleRouter);
 app.use('/api/new', newRouter);
 app.use('/api/search', searchRouter);
 app.use('/api/education', eduRouter);
+app.use('/api/cart', cartRouter);
+app.use('/api/fav', cartRouter);
+
+
 
 
 // Start the server
