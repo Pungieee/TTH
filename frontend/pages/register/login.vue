@@ -1,21 +1,28 @@
 <template>
     <div class="background">
-
         <div class="container">
-            <h1>Log in to your account</h1>
-            <br>
-            <p>Enter your email to Log in</p>
-            <input type="text" v-model="email" id="email" class="tab" placeholder="enter your email">
-            <br>
-            <input type="text" v-model="password" id="password" class="tab" placeholder="enter your password">
-            <br>
-            <button @click="login" class="tab">Log in</button>
-            <br>
-            <div id="signup" class="tab"><a href="/register/signup">Sign up</a></div>
+            <div class="header">
+                <h1>Login to your account</h1>
+            </div>
+            <div class="dct">
+                <p>Enter your email to Log in</p>
+            </div>
+            <div class="input-box">
+                <input type="text" v-model="email" id="email" class="tab" placeholder="Enter your email">
+                <input type="password" v-model="password" id="password" class="tab" placeholder="Enter your password">
+            </div>
+            <div class="login-btn">
+                <button @click="login" class="tab-style">
+                    <p>Log in</p>
+                </button>
+            </div>
+            <div id="signup"><a href="/register/signup">
+                    <button class="tab-signup">Sign up</button></a>
+            </div>
+
             <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
             <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
         </div>
-
     </div>
 </template>
 
@@ -70,70 +77,96 @@ export default {
 .success-message {
     color: green;
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 .error-message {
     color: red;
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 .background {
     background-color: #fff9ed;
-    padding: 100px 0px;
+    padding: 80px 0px;
 
 }
 
 .container {
     padding-top: 40px;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     text-align: center;
     border: 1px solid #544238;
     border-radius: 40px;
     background-color: #E8DDCC;
-    width: 874px;
-    height: 572px;
+    width: 65%;
+    max-width: 600px;
 }
 
-.tab {
-    width: 719px;
-    height: 56px;
+.header {
+    color: #544238;
+    padding: 5px;
 }
 
-#email {
-    font-size: 1.2rem;
-    padding-left: 20px;
+.dct {
+    font-size: 16px;
+    color: #544238;
+    padding: 0px 0px 40px;
+}
+
+.input-box input {
+    width: 90%;
+    height: 45px;
+    padding: 0 10px 0 15px;
+    border-radius: 15px;
+    border: 2px solid #bebebe;
+    transition: .2s ease;
+    font-size: 14px;
+}
+
+.input-box input:focus {
+    background: rgb(230, 230, 230);
+}
+
+.input-box input {
+    margin-bottom: 10px;
+}
+
+.login-btn {
     margin-top: 30px;
-    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-#password {
-    font-size: 1.2rem;
-    padding-left: 20px;
-    margin-top: 30px;
-    border-radius: 10px;
+.login-btn p {
+    color: #e9e9e9;
+    font-weight: bold;
 }
 
-#login {
-    font-size: 1.2rem;
-    margin-top: 30px;
-    border-radius: 10px;
+.tab-style {
+    font-size: 16px;
+    background-color: #544238;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 15px;
+    width: 90%;
+    cursor: pointer;
 }
 
-#signup {
-    font-size: 1.2rem;
-    margin: 30px 77.5px;
-    border-radius: 10px;
-    background-color: #fff;
-    border: 2px solid #544238;
-    padding-top: 13px;
+.tab-signup {
+    font-size: 16px;
+    background-color: #b7a59b;
+    color: white;
+    padding: 15px;
+    width: 90%;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
 
-    & a {
-        text-decoration: none;
-        color: #333;
-
-    }
-
+a {
+    text-decoration: none;
+    color: #fff;
 }
 </style>

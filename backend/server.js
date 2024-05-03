@@ -67,7 +67,7 @@ app.use('/api/new', newRouter);
 app.use('/api/search', searchRouter);
 app.use('/api/education', eduRouter);
 app.use('/api/cart', cartRouter);
-app.use('/api/fav', cartRouter);
+app.use('/api/fav', favRouter);
 
 
 

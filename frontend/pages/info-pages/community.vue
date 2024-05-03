@@ -1,7 +1,8 @@
 <template>
     <div class="background">
+
         <div class="left-bar">
-            <img class="left-img" src="/public/image/Frame.png" />
+            <img class="left-img" src="/public/image/Frame.png">
             <h4>Username</h4>
             <p>career</p>
             <p><i class="fa-solid fa-location-dot"></i> Location</p>
@@ -31,20 +32,22 @@
                 <p>Likes</p>
             </div>
             <div class="photo-img">
-                <img src="/public/image/chess.png" />
-                <img src="/public/image/chess.png" />
+                <img src="/public/image/chess.png">
+                <img src="/public/image/chess.png">
             </div>
+
         </div>
 
         <div class="center-bar">
+
             <h1>Community</h1>
-            <input type="text" id="search" placeholder=" Search" />
+            <input type="text" id="search" placeholder=" Search">
             <div class="my-vibes">
                 <h1>My vibes</h1>
                 <a href="#"><i class="fa-regular fa-comments"></i> Chat</a>
             </div>
 
-            <img class="my-vibes-img" src="/public/image/chess.png" />
+            <img class="my-vibes-img" src="/public/image/chess.png">
 
             <div class="posts">
                 <h1><i class="fa-solid fa-bullhorn"></i> Posts</h1>
@@ -54,7 +57,7 @@
                 <div class="post-con1-nav">
                     <div class="pcon1-top">
                         <div class="avatar-con">
-                            <img class="avatar" src="/public/image/Frame.png" />
+                            <img class="avatar" src="/public/image/Frame.png">
                             <div class="post-con-nav-text">
                                 <p>Username</p>
                                 <p>online status</p>
@@ -62,7 +65,7 @@
                         </div>
                         <label><a href="#">Follow</a></label>
                     </div>
-                    <input type="text" id="share" placeholder="Share your thoughts" />
+                    <input type="text" id="share" placeholder="Share your thoughts">
                 </div>
                 <div class="post-con1-footer">
                     <a href="#"><i class="fa-solid fa-tower-broadcast"></i> Live</a>
@@ -75,7 +78,7 @@
                 <div class="post-con1-nav" id="post-con2-nav">
                     <div class="pcon1-top">
                         <div class="avatar-con">
-                            <img class="avatar" src="/public/image/Frame.png" />
+                            <img class="avatar" src="/public/image/Frame.png">
                             <div class="post-con-nav-text">
                                 <p>Username</p>
                                 <p>online status</p>
@@ -83,16 +86,48 @@
                         </div>
                         <label><a href="#">Follow</a></label>
                     </div>
-                    <img class="pcon2-img" src="/public/image/chess.png" />
+                    <img class="pcon2-img" src="/public/image/chess.png">
                 </div>
+
             </div>
             <div class="pcon2-footer">
                 <h3>Comments</h3>
                 <div class="pcon2-comment">
-                    <img class="avatar" id="avatar2" src="/public/image/Frame.png" />
-                    <input type="text" id="comment" placeholder="Write a comment" />
+                    <img class="avatar" id="avatar2" src="/public/image/Frame.png">
+                    <input type="text" id="comment" placeholder="Write a comment">
                     <a href="#"><i class="fa-solid fa-paper-plane"></i></a>
                 </div>
+            </div>
+        </div>
+
+        <div class="right-bar">
+            <div class="top-chat">
+                <h1>Chat</h1>
+                <a href="#"><i class="fa-solid fa-user-plus"></i></a>
+            </div>
+            <div class="chat-con">
+                <div class="a-con">
+                    <img src="/public/image/Frame.png">
+                    <div class="chat-text">
+                        <p id="chat-user-name">User name</p>
+                        <p>message</p>
+                    </div>
+                    <p>Date,Time</p>
+                </div>
+                <div class="a-con">
+                    <img src="/public/image/Frame.png">
+                    <div class="chat-text">
+                        <p>User name</p>
+                        <p>message</p>
+                    </div>
+                    <p>Date,Time</p>
+                </div>
+
+                <div class="create-group-chat">
+                    <a href="#">Create a group chat</a>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -101,8 +136,10 @@
 <script setup>
 useHead({
     title: "TrendyTreehugger | คอมมูนิตี้",
-    meta: [{ name: "description", content: "ร้านค้าเเฟชั่น" }],
-});
+    meta: [
+        { name: "description", content: "ร้านค้าเเฟชั่น" }
+    ]
+})
 </script>
 
 <style scoped>
@@ -155,7 +192,7 @@ useHead({
 .profile-btn a {
     margin: 0px 20px;
     text-decoration: none;
-    background-color: #6b705c;
+    background-color: #6B705C;
     color: #fff;
     padding: 10px 15px;
     border-radius: 10px;
@@ -168,6 +205,7 @@ useHead({
     & p {
         margin: 0 40px;
     }
+
 }
 
 .photo-img {
@@ -213,8 +251,10 @@ useHead({
     justify-content: space-between;
 
     & a {
+
         color: #333;
     }
+
 }
 
 .post-con {
@@ -328,6 +368,38 @@ useHead({
     & a {
         color: #333;
         font-size: 1.5rem;
+    }
+}
+
+.a-con {
+    padding: 10px 5px;
+    background-color: #fff;
+    display: flex;
+    margin: 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+    & img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.chat-text {
+    margin-left: -100px;
+}
+
+.create-group-chat {
+    text-align: center;
+    margin: 40px;
+
+    & a {
+        text-decoration: none;
+        color: #fff;
+        background-color: #6B705C;
+        padding: 5px 10px;
+        border-radius: 10px;
     }
 }
 </style>

@@ -67,11 +67,12 @@
             <div class="community-info">
                 <h1>Our Community</h1>
                 <br>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, error labore similique
-                    impedit
-                    iste eum quo, ullam voluptate, ab saepe magni. Vel quam optio, neque eligendi officiis in nostrum
-                    aspernatur dolorem doloribus nihil, eveniet pariatur culpa illo inventore? Sequi perspiciatis natus
-                    doloremque similique illo labore quis sit non eius dicta.
+                <p>We celebrates creativity and diversity, employing and training people from refugee and new migrant
+                    communities.
+                    Whether you're just starting out on your eco-fashion journey or you're already a seasoned pro,
+                    you'll find a warm welcome here.
+                    Let's share tips, swap stories, and inspire each other to make our world a little greener, one
+                    stylish step at a time!
                 </p>
                 <br>
                 <NuxtLink to="/info-pages/community">Join Us</NuxtLink>
@@ -84,13 +85,9 @@
                 <div class="content-info">
                     <h3>Education Resources</h3>
                     <br>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, error labore similique
-                        impedit
-                        iste eum quo, ullam voluptate, ab saepe magni. Vel quam optio, neque eligendi officiis in
-                        nostrum
-                        aspernatur dolorem doloribus nihil, eveniet pariatur culpa illo inventore? Sequi perspiciatis
-                        natus
-                        doloremque similique illo labore quis sit non eius dicta.
+                    <p>If you’re looking to learn more about the fashion industry’s environmental and social impacts,
+                        We dive deep into topics like eco fabrics and labor rights with these free sustainable fashion
+                        courses, podcasts, publications, and more
                     </p>
                     <br>
                     <NuxtLink to="/info-pages/education" class="explore">Explore</NuxtLink>
@@ -101,13 +98,11 @@
                 <div class="content-info">
                     <h3>Event</h3>
                     <br>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, error labore similique
-                        impedit
-                        iste eum quo, ullam voluptate, ab saepe magni. Vel quam optio, neque eligendi officiis in
-                        nostrum
-                        aspernatur dolorem doloribus nihil, eveniet pariatur culpa illo inventore? Sequi perspiciatis
-                        natus
-                        doloremque similique illo labore quis sit non eius dicta.
+                    <p>We make sustainable fashion accessible.
+                        Taking a grassroots approach, we help to empower people with skills and resources to help drive
+                        a positive shift in our collective relationship with clothes.
+                        Explore the different ways people can take action for a better fashion future, no matter their
+                        background or budget
                     </p>
                     <br>
                     <NuxtLink to="/info-pages/event" class="explore">Explore</NuxtLink>
@@ -258,6 +253,7 @@ footer {
 
 .cards-con {
     position: relative;
+    object-fit: cover;
 }
 
 .text {
@@ -274,6 +270,8 @@ footer {
     filter: brightness(0.5);
     transition: filter 0.3s;
 }
+
+
 
 .text:hover.text {
     color: #fff;
@@ -316,12 +314,6 @@ footer {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.product-img {
-    padding: 10px;
-    width: 300px;
-    height: 300px;
-}
-
 a {
     text-decoration: none;
 }
@@ -330,21 +322,19 @@ a {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    object-fit: cover;
     align-items: center;
 
-    & .community-info {
-        font-size: 1.5rem;
-        padding: 1rem;
-        margin-left: 20px;
-    }
-
-    & .community-img {
+    .community-img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        flex: 1;
         height: 500px;
         width: auto;
+        padding-right: 20px;
     }
 
-    & a {
+    a {
         color: #333;
         text-decoration: underline;
     }
@@ -352,12 +342,15 @@ a {
 }
 
 .content-con {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 5px;
     justify-content: space-between;
-    padding: 0px 40px 40px 40px;
+    padding: 0px 40px 40px;
 }
 
 .a-content-con {
+
     justify-content: center;
     align-items: center;
     margin: 10px;

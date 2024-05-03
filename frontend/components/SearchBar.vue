@@ -53,6 +53,7 @@ export default {
     transition: box-shadow 0.3s ease;
 }
 
+/* not done yet
 .result-cards {
     display: flex;
     top: 100%;
@@ -68,7 +69,9 @@ export default {
     align-items: center;
     margin-top: 1rem;
     z-index: 1;
-}
+    height: 200px;
+    overflow-y: auto;
+}*/
 
 .card {
     width: 100%;
@@ -81,26 +84,25 @@ export default {
     padding: .25rem;
 }
 
-#search {
-    display: flex;
-    height: 35px;
-    padding: 5px 15px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
+.search-input {
+    grid-column: 1 / -1;
+    padding: 0.5rem;
+    font-size: 1rem;
     outline: none;
     width: 500px;
     align-items: center;
 }
 
-#search:focus {
-    border: 1px solid #8a8a8a;
-}
-
-/* Uncommented CSS rules */
-/*
-.search-result {
-    padding: 0.25rem;
-    cursor: pointer;
+#search {
+    display: flex;
+    height: 35px;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    width: 500px;
+    max-width: 100%;
+    align-items: center;
 }
 
 .search-result:hover {
@@ -110,5 +112,4 @@ export default {
 .hide {
     display: none;
 }
-*/
 </style>

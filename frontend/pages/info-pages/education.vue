@@ -68,7 +68,6 @@ onMounted(async () => {
     }
 });
 </script>
-
 <style scoped>
 * {
     margin: 0;
@@ -84,57 +83,90 @@ onMounted(async () => {
 .head {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    /* vertically center align items */
 }
 
 .section {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    /* vertically center align items */
 }
 
 h1 {
     font-size: 3rem;
+    color: #333;
+    /* Set heading color */
 }
 
 #topic {
-    font-size: 3rem;
+    font-size: 2rem;
+    /* Reduce font size for topic */
+    color: #333;
+    /* Set text color */
 }
 
 .img-con {
     width: 50%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    /* vertically center align items */
 }
 
 #middle-img {
-    margin-bottom: -60px;
-    margin-top: 60px;
+    margin-bottom: -20px;
+    /* Adjust margin */
+    margin-top: 20px;
+    /* Adjust margin */
 }
 
-#submit {
-    text-decoration: none;
-    color: #333;
-    background-color: #fff;
-    padding: 10px 20px;
-    border-left: 4px solid #333;
-}
-
+#submit,
 #get {
+    display: inline-block;
     text-decoration: none;
     color: #333;
-    background-color: #FBF3EB;
+    background-color: #fbf3eb;
     padding: 10px 20px;
+    border: 2px solid #333;
+    /* Add border */
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    /* Add transition effect */
 }
+
+#submit:hover,
+#get:hover {
+    background-color: #ffac33;
+    color: white;
+    border-color: #ff9800;
+    /* Change border color on hover */
+}
+
+.info-con {
+    max-width: 50%;
+    /* Limit max width */
+}
+
 .article {
-    margin-bottom: 30px;
+    display: flex;
+    margin-bottom: 40px; /* Increase margin bottom */
+    margin-top: 30px;
+    
 }
 
 .article img {
-    max-width: 100%;
+    width: 30%;
+    /* Reduce image width */
     height: auto;
+    margin-right: 20px;
+    /* Add spacing between image and text */
 }
 
 .article-details {
-    margin-top: 20px;
+    flex: 1;
+    /* Take remaining space */
 }
 
 .read-more-btn {
@@ -144,22 +176,33 @@ h1 {
     color: white;
     border-radius: 4px;
     text-decoration: none;
+    transition: background-color 0.3s;
+    /* Add transition effect */
+    margin-top: 30px;
+    /* Increase margin top */
+    cursor: pointer;
+        /* Add cursor */
 }
-
 .read-more-btn:hover {
     background-color: #ffac33;
 }
-.article-img-0 {
-    width: 50%;
+
+.popular-articles-con {
+    margin-top: 60px;
+    /* Increase margin top */
+    background-color: #f0f0f0;
+    /* Change background color */
+    padding: 30px;
+    /* Add padding */
+    border-radius: 8px;
+    /* Add border radius */
 }
 
-.article-img-1 {
-    width: 40%;
+h2 {
+    font-size: 2rem;
+    /* Set heading size */
+    color: #333;
+    /* Set heading color */
 }
-
-.article-img-2 {
-    width: 60%;
-}
-
-
 </style>
+

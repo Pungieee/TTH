@@ -4,12 +4,13 @@
         <div class="container">
             <div v-for="product in products" :key="product.id" class="product-card">
                 <div class="sale-badge" v-if="product.onSale">Sale</div>
-                <!-- New: Display Sale badge if product is on sale -->
                 <img :src="product.pic" alt="Product Image">
-                <h4 class="title">{{ product.name }}</h4>
-                <h4 class="price">{{ product.price }}</h4> <!-- Display only the sale price -->
-                <button type="button" @click="addToCart(product)">Add to cart</button>
-                <button type="button" @click="addToFavorites(product)">Add to favorites</button>
+                <h3 class="title">{{ product.name }}</h3>
+                <h4 class="price">{{ product.price }}</h4>
+                <button type="button" @click="addToCart(product)">
+                    <i class="fa-solid fa-cart-shopping" style="color: #544238;"></i></button>
+                <button type="button" @click="addToFavorites(product)"><i class="fa-solid fa-heart"
+                        style="color: #544238;"></i></button>
             </div>
         </div>
     </div>
@@ -86,26 +87,22 @@ export default {
 
 .product-card {
     position: relative;
-    /* Added: Position relative for badge positioning */
     width: calc(33.33% - 20px);
     margin-bottom: 20px;
-    background: #FFF9ED;
+    background: #E5E0D5;
     box-sizing: border-box;
     padding: 10px;
 }
 
 .product-card img {
     width: 100%;
-    height: auto;
+    height: 500px;
+    object-fit: cover;
 }
 
-.title {
-    color: #333;
-    margin-top: 10px;
-}
-
+.title,
 .price {
-    color: #333;
+    color: #544238;
 }
 
 .old-price {
@@ -119,27 +116,23 @@ export default {
 
 .sale-badge {
     position: absolute;
-    /* Added: Position absolute for badge positioning */
     top: 10px;
-    /* Adjust as needed */
     right: 10px;
-    /* Adjust as needed */
     background-color: red;
-    /* Adjust background color as needed */
     color: white;
-    /* Adjust text color as needed */
     padding: 5px;
-    /* Adjust padding as needed */
     border-radius: 5px;
-    /* Adjust border radius as needed */
 }
 
 .product-card:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-button {
+.button {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
 a {

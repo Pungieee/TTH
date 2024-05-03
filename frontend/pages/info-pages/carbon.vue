@@ -4,34 +4,35 @@
             <div class="text1">
                 <h1>Track Your Footprint</h1>
                 <br>
-                <h3>Your Carbon Footprint Today: {{ todayCarbonFootprint }}</h3>
+                <h3>Your Carbon Footprint Today: <span class="carbon-footprint">{{ todayCarbonFootprint }}</span></h3>
             </div>
             <img src="/public/image/foot.png">
         </div>
 
         <div class="hero2">
             <div class="text2">
-                <h1>Track product's carbon footprint</h1>
+                <h1>Track Product's Carbon Footprint</h1>
             </div>
             <div class="input-con">
                 <div class="input">
-                    <p>Product Name</p>
-                    <input type="text" v-model="productName">
+                    <label for="productName">Product Name</label>
+                    <input id="productName" type="text" v-model="productName" placeholder="Enter product name">
                 </div>
                 <div class="input">
-                    <p>Category</p>
-                    <input type="text" v-model="category">
+                    <label for="category">Category</label>
+                    <input id="category" type="text" v-model="category" placeholder="Enter category">
                 </div>
                 <div class="input">
-                    <p>Carbon Footprint</p>
-                    <input type="number" v-model="carbonFootprint">
+                    <label for="carbonFootprint">Carbon Footprint (Kg)</label>
+                    <input id="carbonFootprint" type="number" v-model="carbonFootprint"
+                        placeholder="Enter carbon footprint">
                 </div>
                 <div class="input">
-                    <p>Description</p>
-                    <textarea v-model="description"></textarea>
+                    <label for="description">Description</label>
+                    <textarea id="description" v-model="description" placeholder="Enter description"></textarea>
                 </div>
             </div>
-            <a id="submit" href="#" @click="submitForm">Submit</a>
+            <button id="submit" @click="submitForm">Submit</button>
         </div>
 
         <!-- Carbon Footprint History -->
@@ -168,40 +169,81 @@ export default {
     font-size: 2rem;
 }
 
+.carbon-footprint {
+    color: #ff0000;
+        /* Red color for emphasis */
+    /* Dark color for readability */
+    font-weight: bold;
+    /* Make the number bold */
+    font-size: 2rem;
+    /* Adjust font size as needed */
+    transform: skew(-10deg);
+    /* Apply a skew transformation */
+    display: inline-block;
+    /* Ensure the span behaves like a block element */
+}
+
 .hero2 {
-    height: 567px;
+    padding: 80px 0;
     background-color: #FFF6CF;
     text-align: center;
-    padding-top: 100px;
 }
 
 .text2 {
-    text-align: center;
-    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.text2 h1 {
+    font-size: 2.5rem;
+    color: #333;
 }
 
 .input-con {
     display: flex;
     justify-content: center;
-    margin-bottom: 60px;
+    flex-wrap: wrap;
 }
 
 .input {
-    text-align: center;
-    margin: 0 50px;
+    margin: 0 20px;
+    margin-bottom: 30px;
+    max-width: 300px;
 }
 
-.input p {
-    margin-top: 10px;
+.input label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.input input,
+.input textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.input textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 #submit {
-    color: #333;
-    background-color: #fff;
+    color: #fff;
+    background-color: #333;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 12px 40px;
     border-radius: 20px;
-    border: #333 2px solid;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit:hover {
+    background-color: #555;
 }
 
 /* Carbon Footprint History styles */
@@ -213,12 +255,14 @@ export default {
 .text3 {
     padding: 20px;
     text-align: center;
+    margin-bottom: 5px;
 }
 
 .history-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
 }
 
 .history-item {

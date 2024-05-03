@@ -6,8 +6,10 @@
                 <img :src="product.pic" alt="Product Image">
                 <h4 class="title">{{ product.name }}</h4>
                 <h4 class="price">{{ product.price }}</h4>
-                <button type="button" @click="addToCart(product)">Add to cart</button>
-                <button type="button" @click="addToFavorites(product)">Add to favorites</button>
+                <button type="button" @click="addToCart(product)">
+                    <i class="fa-solid fa-cart-shopping" style="color: #544238;"></i></button>
+                <button type="button" @click="addToFavorites(product)"><i class="fa-solid fa-heart"
+                        style="color: #544238;"></i></button>
             </div>
         </div>
     </div>
@@ -80,23 +82,19 @@ export default {
 }
 
 .container div {
-    width: calc(33.33% - 20px);
-    /* Set the width to one-third of the container width minus some margin */
-    margin-bottom: 20px;
-    /* Add some margin between items */
-    background: #FFF9ED;
-    box-sizing: border-box;
-    /* Include padding and border in the width */
-    padding: 10px;
-    /* Add some padding to the items */
+        position: relative;
+        width: calc(33.33% - 20px);
+        margin-bottom: 20px;
+        background: #E5E0D5;
+        box-sizing: border-box;
+        padding: 10px;
 }
 
 .container div img {
-    width: 100%;
-    /* Make the images fill the entire width of the container */
-    height: auto;
-    /* Maintain the aspect ratio */
-}
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
 
 .title {
     color: #333;

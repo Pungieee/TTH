@@ -130,7 +130,6 @@ nav a {
 
     .menu a {
         margin-bottom: 10px;
-        /* Add some space between menu items */
     }
 }
 
@@ -175,12 +174,12 @@ menu {
     padding: 10px 50px;
     background: #FFF9ED;
 
-    & a {
+    a {
         text-decoration: none;
         color: #544238;
     }
 
-    & a:hover {
+    a:hover {
         text-decoration: underline;
     }
 }

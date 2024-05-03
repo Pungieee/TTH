@@ -1,23 +1,25 @@
 <template>
-    <div>
+    <div class="favorite-products">
         <h1>Favorite Products</h1>
-        <div v-if="isLoading">Loading...</div>
+        <div v-if="isLoading" class="loading">Loading...</div>
         <div v-else>
-            <div v-if="favoriteProducts.length === 0">
+            <div v-if="favoriteProducts.length === 0" class="no-products">
                 No favorite products found for this user.
             </div>
             <div v-else>
-                <div v-for="product in favoriteProducts" :key="product.id">
-                    <div class="product-item">
-                        <img :src="product.pic" alt="Product Image" class="product-image">
-                        <div class="product-details">
-                            <h2>{{ product.name }}</h2>
-                            <p>Price: {{ product.price }}</p>
-                        </div>
-                        <div class="product-actions">
-                            <button @click="removeFromFavorites(product.id)">Remove from Favorites</button>
-                            <button @click="addToCart(product)">Add to Cart</button>
-                        </div>
+                <div v-for="product in favoriteProducts" :key="product.id" class="product-item">
+                    <img :src="product.pic" alt="Product Image" class="product-image">
+                    <div class="product-details">
+                        <h2>{{ product.name }}</h2>
+                        <p class="price"> {{ product.price }}</p>
+                    </div>
+                    <div class="product-actions">
+                        <button @click="removeFromFavorites(product.id)" class="remove-button">
+                            <i class="fas fa-heart"></i> <!-- Heart icon for remove -->
+                        </button>
+                        <button @click="addToCart(product)" class="add-to-cart-button">
+                            <i class="fas fa-cart-plus"></i> <!-- Cart plus icon for add to cart -->
+                        </button>
                     </div>
                 </div>
             </div>
@@ -98,22 +100,94 @@ export default {
 </script>
 
 <style scoped>
+.favorite-products {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.favorite-products h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.loading,
+.no-products {
+    font-size: 1.5rem;
+    color: #666;
+    text-align: center;
+}
+
 .product-item {
     display: flex;
+    align-items: center;
     margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 1px solid #eee;
+}
+
+.product-item:last-child {
+    margin-bottom: 0;
 }
 
 .product-image {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin-right: 20px;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 .product-details {
     flex: 1;
+    padding-left: 20px;
+}
+
+.product-details h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .product-actions button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: transparent;
+}
+
+.remove-button {
+    color: #ff6666;
     margin-right: 10px;
+}
+
+.remove-button:hover {
+    background-color: #ffebee;
+}
+
+.add-to-cart-button {
+    color: #66cc66;
+}
+
+.add-to-cart-button:hover {
+    background-color: #e8f5e9;
 }
 </style>

@@ -11,19 +11,19 @@
             <div class="bottom-con">
                 <a href="#">Account Details</a>
                 <br>
-                <a href="#">Order History</a>
+                <a href="#"></a>
                 <br>
-                <a href="#">ooo wee ooo wee</a>
+                <a href="#"></a>
                 <br>
-                <a href="#">im on the next</a>
+                <a href="#"></a>
                 <br>
-                <a href="#">LEVEL</a>
+                <a href="#"></a>
                 <br>
-                <a href="#">Next level</a>
+                <a href="#"></a>
                 <br>
-                <a href="#">OOOLLLLL</a>
+                <a href="#"></a>
                 <br>
-                <a href="#">LPPOLO</a>
+                <a href="#"></a>
             </div>
 
         </div>
